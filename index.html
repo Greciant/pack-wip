@@ -525,6 +525,64 @@ footer p{max-width:80ch}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}*,*::before{transition:none!important}.btn:hover,.card:hover,.mod:hover,.tune:hover{transform:none}}
+
+/* refinamientos visuales */
+.hero::after{content:"";position:absolute;z-index:0;inset:auto 0 0;height:120px;pointer-events:none;background:linear-gradient(180deg,transparent 0%,color-mix(in srgb,var(--bg2) 42%,transparent) 48%,var(--bg2) 100%)}
+.btn.connection{background:var(--oxide);color:var(--oxide-ink);border-color:color-mix(in srgb,var(--oxide) 62%,#000);box-shadow:inset 0 2px 0 color-mix(in srgb,var(--oxide) 72%,#fff),inset 0 -4px 0 color-mix(in srgb,var(--oxide) 65%,#000)}
+.btn.connection:hover{outline-color:color-mix(in srgb,var(--oxide) 65%,#fff)}
+.btn.connection:active{box-shadow:inset 0 2px 0 color-mix(in srgb,var(--oxide) 72%,#fff),inset 0 -2px 0 color-mix(in srgb,var(--oxide) 65%,#000)}
+.entry .private-label{border-color:color-mix(in srgb,var(--oxide) 62%,transparent);background:color-mix(in srgb,var(--oxide) 18%,#101419);color:#d2fff2}
+.entry .private-label::before{background:var(--oxide);box-shadow:0 0 0 3px color-mix(in srgb,var(--oxide) 22%,transparent)}
+.step-preview{position:relative;width:100%;height:116px;overflow:hidden;border:2px solid var(--line2);border-radius:3px;background:#181b23;color:#e9e6df;font:10px/1.25 "JetBrains Mono",monospace;box-shadow:inset 0 -3px 0 rgba(0,0,0,.3)}
+.step-preview *{box-sizing:border-box}
+.preview-bar{height:23px;padding:0 9px;display:flex;align-items:center;gap:7px;background:#262a34;border-bottom:1px solid #3d424e;color:#eae7e0}
+.preview-app{display:flex;align-items:center;gap:6px;font:600 10px Rubik,sans-serif}
+.preview-app i{width:8px;height:8px;background:var(--copper);box-shadow:2px 2px 0 #6d3821}
+.preview-window-controls{margin-left:auto;color:#9ca2af;letter-spacing:3px}
+.preview-caption{position:absolute;right:6px;bottom:5px;padding:3px 5px;background:rgba(12,14,19,.82);color:#a7b0bf;font:8px "JetBrains Mono",monospace;letter-spacing:.06em}
+.preview-prism{height:91px;display:grid;grid-template-columns:64px 1fr;background:#20232b}
+.preview-rail{display:grid;align-content:start;gap:9px;padding:11px 8px;border-right:1px solid #343946;color:#9ca2ae;font:9px Rubik,sans-serif}
+.preview-rail b{color:#f1a46f;font-weight:600}
+.preview-main{padding:10px 12px;min-width:0}
+.preview-eyebrow{color:#9ca2ae;font:8px "JetBrains Mono",monospace;letter-spacing:.08em}
+.preview-instance{display:flex;align-items:center;gap:8px;margin-top:7px;padding:7px 8px;background:#303540;border:1px solid #484f5b}
+.preview-instance i{width:22px;height:22px;flex:none;background:linear-gradient(135deg,#74ba52 0 45%,#946542 46% 70%,#527db1 71%);border:2px solid #bec5cf}
+.preview-instance b{font:600 10px Rubik,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.preview-instance small{margin-left:auto;color:#8ad39c;font-size:8px}
+.preview-lines{display:flex;gap:5px;margin-top:7px}
+.preview-lines i{height:4px;background:#454b57;flex:1}
+.preview-folder{height:91px;padding:10px 13px;display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#20232b}
+.preview-file{display:flex;align-items:center;gap:7px;min-width:0;padding:6px 8px;background:#2b3039;border:1px solid #3d4450;color:#d6d9df;font:9px Rubik,sans-serif}
+.preview-file i{width:14px;height:12px;flex:none;background:#68a8d5;clip-path:polygon(0 12%,38% 12%,48% 28%,100% 28%,100% 100%,0 100%)}
+.preview-file.mods i{background:#87ba55}
+.preview-file span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.preview-memory{grid-column:1/-1;display:flex;align-items:center;gap:6px;color:#a8b0bc;font:8px "JetBrains Mono",monospace}
+.preview-memory b{padding:3px 6px;border:1px solid #4c7559;background:#25352b;color:#a8e2b4}
+.preview-network{height:91px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:10px;padding:10px 14px;background:#20232b}
+.preview-network-icon{width:35px;height:35px;display:grid;place-items:center;border:2px solid #49775a;background:#24392d;color:#8fe0a2;font-size:19px}
+.preview-network-copy{display:grid;gap:4px;min-width:0}
+.preview-network-copy b{font:600 11px Rubik,sans-serif;color:#a7e5b3}
+.preview-network-copy span{color:#b5beca;font:9px "JetBrains Mono",monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.preview-nodes{grid-column:1/-1;display:flex;align-items:center;gap:8px;color:#adb6c1;font:8px "JetBrains Mono",monospace}
+.preview-nodes i{width:7px;height:7px;border-radius:50%;background:#78d990;box-shadow:0 0 0 3px rgba(120,217,144,.13)}
+.finder{display:grid;gap:14px;margin:22px 0 18px;padding:16px;background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--line);border-top:2px solid var(--oxide);box-shadow:var(--shadow)}
+.finder-main{display:flex;align-items:center;gap:12px;min-width:0}
+.finder .search{max-width:none;height:46px;flex:1}
+.finder .search:focus-within{border-color:var(--oxide)}
+.finder .count{flex:none;padding:7px 10px;border:1px solid var(--line2);background:var(--surface2);border-radius:3px;color:var(--fg);white-space:nowrap}
+.finder-filters{display:grid;gap:12px}
+.filter-group{display:grid;grid-template-columns:118px minmax(0,1fr);align-items:center;gap:12px}
+.filter-title{font:500 11px "JetBrains Mono",monospace;color:var(--faint);letter-spacing:.07em;text-transform:uppercase}
+.finder .chip{background:var(--bg)}
+.finder .chip.on{background:var(--green)}
+.cfg{box-shadow:var(--shadow)}
+.cfg-side .sbox{background:var(--surface2)}
+.files .dir{position:sticky;top:0;z-index:1;background:var(--surface2);border-bottom:1px solid var(--line);box-shadow:0 3px 6px rgba(0,0,0,.08);display:flex;justify-content:space-between;align-items:center}
+.files .dir em{font-style:normal;font:10px "JetBrains Mono",monospace;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:2px 6px}
+.files button{padding-block:5px;font-size:12.5px;transition:background .12s,color .12s}
+.files button.on{border-left:3px solid var(--copper);padding-left:11px}
+.files button:focus-visible{outline:2px solid var(--oxide);outline-offset:-2px;color:var(--fg)}
+@media (max-width:600px){.finder{padding:12px}.finder-main{align-items:stretch}.finder .count{align-self:center;padding:6px 8px;font-size:11.5px}.filter-group{grid-template-columns:1fr;gap:6px}.step-preview{height:108px}}
 </style>
 </head>
 <body>
@@ -557,7 +615,7 @@ footer p{max-width:80ch}
     <div class="eyebrow">Minecraft 1.20.1 · Forge + Sinytra Connector</div>
     <h1 style="margin-top:14px">El pack <span>WIP</span>,<br>abierto para los amigos</h1>
     <p class="lede">Instala el modpack, conecta Tailscale y entra al mundo privado. Aquí también puedes explorar los mods y sus ajustes.</p>
-    <div class="cta"><a class="btn primary big" href="#empezar">Instalar el pack</a><a class="btn big" href="#servidor">Conectarme con Tailscale</a></div>
+    <div class="cta"><a class="btn primary big" href="#empezar">Instalar el pack</a><a class="btn connection big" href="#servidor">Conectarme con Tailscale</a></div>
     <div class="serverlist">
       <div class="sl-label">SERVIDOR PRIVADO · ACCESO CON INVITACIÓN</div>
       <div class="entry">
@@ -585,9 +643,36 @@ footer p{max-width:80ch}
       <p class="lede">Instala el pack una vez; luego mantén Tailscale conectado cada vez que quieras entrar al servidor.</p>
     </div></div>
     <div class="steps3">
-      <article class="st"><span class="num">1</span><div class="slot" data-icon="ui"></div><h3>Instala Prism</h3><p>Usa una instancia aparte para WIP. Necesitas Java 17 y Minecraft 1.20.1 con Forge.</p><a class="btn" href="https://prismlauncher.org/download/" target="_blank" rel="noopener">Descargar Prism</a></article>
-      <article class="st"><span class="num">2</span><div class="slot" data-icon="items"></div><h3>Instala el pack</h3><p>Descarga los mods y los ajustes, cópialos en la instancia y asígnale 8 GB de memoria.</p><a class="btn primary" href="#mods">Ver descargas</a></article>
-      <article class="st"><span class="num">3</span><div class="slot" data-icon="world"></div><h3>Conecta Tailscale</h3><p>Instálalo con tu cuenta personal y acepta la invitación privada que te enviaré. Después podrás entrar al servidor.</p><a class="btn" href="https://tailscale.com/download" target="_blank" rel="noopener">Descargar Tailscale</a></article>
+      <article class="st">
+        <span class="num">1</span>
+        <div class="step-preview" aria-hidden="true">
+          <div class="preview-bar"><span class="preview-app"><i></i> Prism Launcher</span><span class="preview-window-controls">•••</span></div>
+          <div class="preview-prism">
+            <div class="preview-rail"><b>Instancias</b><span>Descubrir</span><span>Grupos</span></div>
+            <div class="preview-main"><div class="preview-eyebrow">TU INSTANCIA</div><div class="preview-instance"><i></i><b>WIP · Forge 1.20.1</b><small>Lista</small></div><div class="preview-lines"><i></i><i></i><i></i></div></div>
+          </div>
+          <span class="preview-caption">VISTA ILUSTRATIVA</span>
+        </div>
+        <h3>Instala Prism</h3><p>Usa una instancia aparte para WIP. Necesitas Java 17 y Minecraft 1.20.1 con Forge.</p><a class="btn" href="https://prismlauncher.org/download/" target="_blank" rel="noopener">Descargar Prism</a>
+      </article>
+      <article class="st">
+        <span class="num">2</span>
+        <div class="step-preview" aria-hidden="true">
+          <div class="preview-bar"><span class="preview-app"><i></i> Archivos del modpack</span><span class="preview-window-controls">•••</span></div>
+          <div class="preview-folder"><div class="preview-file mods"><i></i><span>mods/</span></div><div class="preview-file"><i></i><span>config/</span></div><div class="preview-memory"><span>Memoria asignada</span><b>8 GB</b></div></div>
+          <span class="preview-caption">CARPETAS DE WIP</span>
+        </div>
+        <h3>Instala el pack</h3><p>Descarga los mods y los ajustes, cópialos en la instancia y asígnale 8 GB de memoria.</p><a class="btn primary" href="#mods">Ver descargas</a>
+      </article>
+      <article class="st">
+        <span class="num">3</span>
+        <div class="step-preview" aria-hidden="true">
+          <div class="preview-bar"><span class="preview-app"><i></i> Tailscale</span><span class="preview-window-controls">•••</span></div>
+          <div class="preview-network"><div class="preview-network-icon">✓</div><div class="preview-network-copy"><b>Conectado</b><span>Servidor WIP · red privada</span></div><div class="preview-nodes"><i></i><span>Invitación aceptada</span><span>·</span><span>Listo para jugar</span></div></div>
+          <span class="preview-caption">RED PRIVADA</span>
+        </div>
+        <h3>Conecta Tailscale</h3><p>Instálalo con tu cuenta personal y acepta la invitación privada que te enviaré. Después podrás entrar al servidor.</p><a class="btn" href="https://tailscale.com/download" target="_blank" rel="noopener">Descargar Tailscale</a>
+      </article>
     </div>
   </div>
 </section>
@@ -695,16 +780,26 @@ footer p{max-width:80ch}
       <p class="muted" id="packnote"></p>
       <div class="bar" id="packbar" hidden><i></i></div>
     </div></div>
-    <div class="toolbar">
-      <label class="search"><svg width="16" height="16" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" opacity=".6" d="M2 0h3v1H2zM1 1h1v1H1zM5 1h1v1H5zM0 2h1v3H0zM6 2h1v3H6zM1 5h1v1H1zM5 5h1v1H5zM2 6h3v-1H2zM6 6h1v1H6zM7 7h1v1H7z"/></svg><input id="mq" type="search" placeholder="Buscar un mod…" autocomplete="off"></label>
-      <div class="chips" id="sidef">
-        <button class="chip on" data-s="">Todos</button>
-        <button class="chip" data-s="C">Solo cliente</button>
-        <button class="chip" data-s="A">Ambos lados</button>
+    <div class="finder" role="group" aria-label="Filtros para explorar los mods">
+      <div class="finder-main">
+        <label class="search"><svg width="16" height="16" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" opacity=".6" d="M2 0h3v1H2zM1 1h1v1H1zM5 1h1v1H5zM0 2h1v3H0zM6 2h1v3H6zM1 5h1v1H1zM5 5h1v1H5zM2 6h3v-1H2zM6 6h1v1H6zM7 7h1v1H7z"/></svg><input id="mq" type="search" placeholder="Buscar por nombre, archivo o descripción…" autocomplete="off" aria-label="Buscar por nombre, archivo o descripción"></label>
+        <span class="count" id="mcount" aria-live="polite"></span>
       </div>
-      <span class="count" id="mcount"></span>
+      <div class="finder-filters">
+        <div class="filter-group" role="group" aria-label="Dónde se instala el mod">
+          <span class="filter-title">Dónde se instala</span>
+          <div class="chips" id="sidef">
+            <button class="chip on" data-s="">Todos</button>
+            <button class="chip" data-s="C">Solo cliente</button>
+            <button class="chip" data-s="A">Ambos lados</button>
+          </div>
+        </div>
+        <div class="filter-group" role="group" aria-label="Filtrar por categoría">
+          <span class="filter-title">Categoría</span>
+          <div class="chips" id="catf"></div>
+        </div>
+      </div>
     </div>
-    <div class="chips" id="catf" style="margin-bottom:18px"></div>
     <div class="mods" id="mlist"></div>
   </div>
 </section>
@@ -1805,7 +1900,7 @@ function loadCfg(){
 function renderFiles(){
   if (!CFG) return;
   const q = norm($('#cq').value.trim()), deep = $('#cdeep').checked;
-  let html = '', lastDir = null, n = 0;
+  const items = [];
   for (const c of CFG) {
     let hits = 0;
     if (q) {
@@ -1814,11 +1909,20 @@ function renderFiles(){
       if (!inName && !hits) continue;
     }
     const dir = c.p.includes('/') ? c.p.split('/')[0] : '';
-    if (dir !== lastDir) { if (dir) html += `<div class="dir">${esc(dir)}/</div>`; else if (lastDir !== null) html += `<div class="dir">archivos sueltos</div>`; lastDir = dir }
-    const label = dir ? c.p.slice(dir.length + 1) : c.p;
-    html += `<button data-p="${esc(c.p)}" class="${c.p === cfgSel ? 'on' : ''}"><span>${esc(label)}</span>${hits ? `<em>${hits}</em>` : ''}</button>`; n++;
+    items.push({ c, hits, dir });
   }
-  $('#files').innerHTML = n ? html : '<div class="placeholder">Nada coincide.</div>';
+  const counts = {};
+  items.forEach(item => counts[item.dir] = (counts[item.dir] || 0) + 1);
+  let html = '', lastDir = null;
+  for (const { c, hits, dir } of items) {
+    if (dir !== lastDir) {
+      html += '<div class="dir"><span>' + (dir ? esc(dir) + '/' : 'Archivos sueltos') + '</span><em>' + counts[dir] + '</em></div>';
+      lastDir = dir;
+    }
+    const label = dir ? c.p.slice(dir.length + 1) : c.p;
+    html += '<button data-p="' + esc(c.p) + '" class="' + (c.p === cfgSel ? 'on' : '') + '"><span>' + esc(label) + '</span>' + (hits ? '<em>' + hits + '</em>' : '') + '</button>';
+  }
+  $('#files').innerHTML = items.length ? html : '<div class="placeholder">Nada coincide.</div>';
 }
 function lineHtml(raw, q){
   let s = esc(raw);
