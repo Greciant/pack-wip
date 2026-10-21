@@ -672,7 +672,7 @@ footer p{max-width:80ch}
           <div class="preview-folder"><div class="preview-file mods"><i></i><span>mods/</span></div><div class="preview-file"><i></i><span>config/</span></div><div class="preview-memory"><span>Memoria asignada</span><b>8 GB</b></div></div>
           <span class="preview-caption">CARPETAS DE WIP</span>
         </div>
-        <h3>Instala el pack</h3><p>Descarga los mods, SPBR y los ajustes; copia sus carpetas en la instancia y asígnale 8 GB de memoria.</p><a class="btn primary" href="#mods">Ver descargas</a>
+        <h3>Instala el pack</h3><p>Descarga un solo ZIP con los mods, SPBR y los ajustes; copia sus carpetas en la instancia y asígnale 8 GB de memoria.</p><a class="btn primary" href="#mods">Ver descargas</a>
       </article>
       <article class="st">
         <span class="num">3</span>
@@ -735,7 +735,7 @@ footer p{max-width:80ch}
           <summary>Ver la instalación completa del modpack</summary>
         <ol class="steps">
           <li><div><b>Instala Prism Launcher y Java 17.</b><p>Prism es gratis y deja tener varias instancias sin mezclar mods. Busca "Prism Launcher" en su web oficial.</p></div></li>
-          <li><div><b>Baja los mods, SPBR y los ajustes.</b><p>En <a href="#mods">Mods</a>, "Bajar el pack completo" crea un zip con <code>mods</code> y el pack de texturas SPBR en <code>resourcepacks</code>. En <a href="#ajustes">Ajustes</a>, baja también el zip de <code>config</code>. En Prism crea una instancia de Minecraft 1.20.1 con Forge, ábrele la carpeta (botón Carpeta) y copia <code>mods</code>, <code>resourcepacks</code> y <code>config</code> dentro de <code>.minecraft</code>. Los 6 mods privados se piden por Discord: <a data-discord href="#" target="_blank" rel="noopener">escríbele a Benjamin</a>.</p></div></li>
+          <li><div><b>Baja el pack completo.</b><p>En <a href="#mods">Mods</a>, el botón “Bajar el pack completo” crea un solo ZIP con <code>mods</code>, <code>config</code> y SPBR dentro de <code>resourcepacks</code>. En Prism crea una instancia de Minecraft 1.20.1 con Forge, ábrele la carpeta (botón Carpeta) y copia esas tres carpetas dentro de <code>.minecraft</code>. Los 6 mods privados se piden por Discord: <a data-discord href="#" target="_blank" rel="noopener">escríbele a Benjamin</a>.</p></div></li>
           <li><div><b>Comprueba la versión.</b><p>Editar instancia, Versión: Minecraft 1.20.1 y Forge 47.4.23. La primera vez Prism baja Forge solo, así que necesitas internet.</p></div></li>
           <li><div><b>Dale memoria.</b><p>Editar instancia, Ajustes, Java: mínimo 4096 MB y máximo 8192 MB. Con menos de 8 GB el pack va a tirones.</p>
             <div class="jvm"><pre id="jvm">-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=130 -XX:G1NewSizePercent=20 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=15 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:+UseStringDeduplication -XX:MetaspaceSize=512m -XX:+PerfDisableSharedMem</pre></div>
@@ -783,7 +783,7 @@ footer p{max-width:80ch}
     <div class="shead"><div>
       <div class="eyebrow">El pack</div>
       <h2>Todos los mods</h2>
-      <p class="lede">La lista completa tiene 303 mods. El ZIP reúne los 297 compartibles y SPBR; los 6 privados se piden por Discord. Pasa el ratón por un mod para ver su archivo o búscalo en Modrinth con un clic.</p>
+      <p class="lede">La lista completa tiene 305 mods. El ZIP reúne los 299 publicables, la carpeta de ajustes y SPBR; los 6 privados se piden por Discord. Solo los shaders y otros modpacks quedan aparte.</p>
     </div>
     <div class="packdl">
       <a class="btn primary" id="packbtn" href="https://greciant.github.io/pack-wip/#mods" target="_blank" rel="noopener"><span id="packlbl">Bajar el pack completo</span> <small id="packsize"></small></a>
@@ -818,8 +818,8 @@ footer p{max-width:80ch}
   <div class="wrap">
     <div class="shead"><div>
       <div class="eyebrow">Vistos en los videos</div>
-      <h2>Texturas y mods recomendados</h2>
-      <p class="lede">Contrasté estos nombres con el inventario actual del pack. SPBR queda incluido en la descarga completa; los mods opcionales tienen su página oficial para que no se mezclen con el servidor sin probarlos.</p>
+      <h2>Texturas y mods del pack</h2>
+      <p class="lede">Todo lo que aparece aquí está incluido en “Bajar el pack completo”. Los shaders y otros modpacks se descargan aparte.</p>
     </div></div>
     <div class="resources-grid">
       <article class="panel resource-card">
@@ -841,14 +841,14 @@ footer p{max-width:80ch}
         <div class="kicker">Mod de interfaz · Forge 1.20.1</div>
         <h3>Jade</h3>
         <p>Muestra información del bloque o entidad que estás mirando.</p>
-        <div class="state">Encontré una copia en el pool, pero está desactivada (.disabled); no viene en el pack actual.</div>
+        <div class="state">Incluido en la descarga completa. Jade también está instalado en el servidor para mostrar más datos de los bloques.</div>
         <div class="actions"><a class="btn" href="https://modrinth.com/mod/jade/versions?l=forge&amp;g=1.20.1" target="_blank" rel="noopener">Descarga oficial</a></div>
       </article>
       <article class="panel resource-card">
         <div class="kicker">Descanso · cliente y servidor</div>
         <h3>Comforts</h3>
         <p>Agrega sacos de dormir y hamacas para descansar durante las aventuras.</p>
-        <div class="state">No aparece en el inventario del pack. Para usarlo en este servidor habría que probarlo e instalarlo en ambos lados.</div>
+        <div class="state">Incluido en la descarga completa e instalado en el servidor. Necesitas ambos lados para usarlo en multijugador.</div>
         <div class="actions"><a class="btn" href="https://modrinth.com/mod/comforts/versions?l=forge&amp;g=1.20.1" target="_blank" rel="noopener">Descarga oficial</a></div>
       </article>
     </div>
@@ -862,12 +862,12 @@ footer p{max-width:80ch}
       <h2>Cómo está configurado cada mod</h2>
       <p class="lede">Los archivos de la carpeta config tal como están en el PC donde se prueba el pack. Primero cómo ponerlos; después, lo que se cambió a propósito y por qué.</p>
     </div>
-    <a class="btn primary" data-dl href="descargas/configs-pack-wip.zip" download>Bajar todos los ajustes <small id="cfgsize"></small></a></div>
+    <p class="note">La carpeta <code>config/</code> ya viene dentro del ZIP completo de <a href="#mods">Mods</a>.</p></div>
     <div class="howto">
       <div class="panel">
         <div class="eyebrow" style="margin-bottom:16px">Cómo poner los ajustes</div>
         <ol class="steps">
-          <li><div><b>Baja los ajustes.</b><p>Botón verde de arriba, "Bajar todos los ajustes". Es un .zip con una carpeta adentro que se llama <code>config</code>.</p></div></li>
+          <li><div><b>Usa el ZIP completo.</b><p>La descarga de <a href="#mods">Mods</a> ya incluye la carpeta <code>config</code>, lista para copiar a tu instancia.</p></div></li>
           <li><div><b>Cierra el juego.</b><p>Si Minecraft está abierto, ciérralo primero: los ajustes se leen al arrancar.</p></div></li>
           <li><div><b>Abre la carpeta de la instancia.</b><p>En Prism, clic derecho sobre la instancia del pack y "Carpeta". Entra a <code>.minecraft</code> (en algunas versiones se llama <code>minecraft</code>). Ahí ya está tu carpeta <code>mods</code>.</p></div></li>
           <li><div><b>Arrastra la carpeta config.</b><p>Abre el .zip y arrastra la carpeta <code>config</code> dentro de <code>.minecraft</code>, al lado de <code>mods</code>. Si Windows pregunta, elige "Reemplazar los archivos en el destino".</p></div></li>
@@ -2077,19 +2077,30 @@ $('#motdcount').textContent = DATA.mods.length;
 $('#f-mods').textContent = DATA.mods.length;
 $('#f-hechos').textContent = DATA.hechos.length;
 $('#f-cfg').textContent = DATA.configsCount;
-$('#cfgsize').textContent = kb(DATA.configsZip);
 $('#todossize').textContent = kb(DATA.todosSize);
 
-/* pack completo: mods compartibles de GitHub + SPBR oficial dentro de resourcepacks/ */
+/* Pack completo: mods, ajustes y SPBR. Jade y Comforts se bajan desde sus CDN oficiales. */
 const PRIVADOS_TXT = 'Archaion, Ancient Remnants, Roaring, Show My World, shineport y el parche de Beyond the Abyss para el cliente';
-const PACK_EXTRAS = [{f:'SPBR-16_2.zip',u:'https://cdn.modrinth.com/data/aNcOVoD7/versions/jtNbhldU/SPBR-16_2.zip',s:14702156,c:2702808429,p:'resourcepacks/SPBR-16_2.zip'}];
+const PACK_EXTRA_MODS = [
+  {f:'Jade-1.20.1-Forge-11.13.3.jar',n:'Jade',c:'ui',side:'A',d:'Muestra información del bloque o entidad que estás mirando.',u:'https://cdn.modrinth.com/data/nvQzSEkH/versions/xJQHCmWJ/Jade-1.20.1-Forge-11.13.3.jar',size:553487,crc:0xc69c208b},
+  {f:'comforts-forge-6.4.0+1.20.1.jar',n:'Comforts',c:'qol',side:'A',d:'Sacos de dormir y hamacas para descansar sin cambiar tu punto de aparición.',u:'https://cdn.modrinth.com/data/SaCpeal4/versions/gBDsc134/comforts-forge-6.4.0%2B1.20.1.jar',size:382083,crc:0x5feebb3d}
+];
+for (const {f,n,c,side,d} of PACK_EXTRA_MODS) if (!DATA.mods.some(m=>m.f===f)) DATA.mods.push({f,n,c,s:side,d});
+DATA.mods.sort((a,b)=>a.n.localeCompare(b.n,'es',{sensitivity:'base'}));
+$('#motdcount').textContent = DATA.mods.length;
+$('#f-mods').textContent = DATA.mods.length;
+const modFiles = DATA.pack || [], modCount = modFiles.length + PACK_EXTRA_MODS.length;
+const PACK_RESOURCES = [
+  {f:'SPBR-16_2.zip',u:'https://cdn.modrinth.com/data/aNcOVoD7/versions/jtNbhldU/SPBR-16_2.zip',s:14702156,c:2702808429,p:'resourcepacks/SPBR-16_2.zip'},
+  {f:'configs-pack-wip.zip',u:'https://greciant.github.io/pack-wip/descargas/configs-pack-wip.zip',s:585621,c:0x7fc0634b,unzip:true}
+];
 (function(){
-  const modFiles = DATA.pack || [], files = [...modFiles, ...PACK_EXTRAS], btn = $('#packbtn');
+  const files = [...modFiles, ...PACK_EXTRA_MODS.map(m=>({f:m.f,u:m.u,s:m.size,c:m.crc})), ...PACK_RESOURCES], btn = $('#packbtn');
   const total = files.reduce((a, f) => a + f.s, 0);
   const note = $('#packnote'), bar = $('#packbar');
   $('#packsize').textContent = kb(total);
-  $('#packlbl').textContent = `Bajar el pack completo (${modFiles.length} mods + SPBR)`;
-  const base = `ZIP con ${modFiles.length} mods compartibles y SPBR dentro de resourcepacks/. Faltan los 6 mods privados (${PRIVADOS_TXT}); pídeselos a Benjamin por Discord.`;
+  $('#packlbl').textContent = `Bajar el pack completo (${modCount} mods + ajustes + SPBR)`;
+  const base = `ZIP con ${modCount} mods, la carpeta config y SPBR dentro de resourcepacks/. Solo shaders y otros modpacks quedan aparte. Faltan los 6 mods privados (${PRIVADOS_TXT}); pídeselos a Benjamin por Discord.`;
   note.textContent = inClaude ? 'Se baja desde la web del pack, que se abre en otra pestaña. ' + base : base;
   if (inClaude || !files.length) return;
   btn.removeAttribute('target'); btn.removeAttribute('href'); btn.setAttribute('role', 'button'); btn.tabIndex = 0;
@@ -2100,7 +2111,7 @@ const PACK_EXTRAS = [{f:'SPBR-16_2.zip',u:'https://cdn.modrinth.com/data/aNcOVoD
     try { await armarPack(files, total, (n, b) => {
       bar.firstElementChild.style.width = (b / total * 100).toFixed(1) + '%';
       note.textContent = `Bajando ${n} de ${files.length} · ${kb(b)} de ${kb(total)}. No cierres la página.`;
-    }); note.textContent = 'Listo. Si el navegador pregunta, guarda pack-wip-cliente-1.20.1.zip. ' + base; }
+      }); note.textContent = 'Listo. Si el navegador pregunta, guarda pack-wip-cliente-1.20.1.zip. ' + base; }
     catch (err) { note.textContent = `Se cortó la descarga (${err.message}). Vuelve a probar.`; }
     finally { busy = false; btn.removeAttribute('aria-disabled'); bar.hidden = true; }
   });
@@ -2110,6 +2121,40 @@ function crc32(u8){
   let c, crc = 0xFFFFFFFF;
   for (let i = 0; i < u8.length; i++) { c = (crc ^ u8[i]) & 255; for (let k = 0; k < 8; k++) c = c & 1 ? (c >>> 1) ^ 0xEDB88320 : c >>> 1; crc = (crc >>> 8) ^ c; }
   return (crc ^ 0xFFFFFFFF) >>> 0;
+}
+
+async function extraerZip(blob){
+  const bytes = new Uint8Array(await blob.arrayBuffer()), view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  let fin = -1;
+  for (let i = bytes.length - 22; i >= Math.max(0, bytes.length - 65557); i--) {
+    if (view.getUint32(i, true) === 0x06054b50) { fin = i; break; }
+  }
+  if (fin < 0) throw new Error('El ZIP de ajustes no es válido');
+  const cantidad = view.getUint16(fin + 10, true);
+  let cursor = view.getUint32(fin + 16, true);
+  const out = [], dec = new TextDecoder();
+  for (let i = 0; i < cantidad; i++) {
+    if (view.getUint32(cursor, true) !== 0x02014b50) throw new Error('No pude leer la lista de archivos de config');
+    const flags = view.getUint16(cursor + 8, true), metodo = view.getUint16(cursor + 10, true);
+    const crc = view.getUint32(cursor + 16, true), comprimido = view.getUint32(cursor + 20, true), size = view.getUint32(cursor + 24, true);
+    const nombreLen = view.getUint16(cursor + 28, true), extraLen = view.getUint16(cursor + 30, true), comentarioLen = view.getUint16(cursor + 32, true);
+    const local = view.getUint32(cursor + 42, true), nombre = dec.decode(bytes.subarray(cursor + 46, cursor + 46 + nombreLen));
+    cursor += 46 + nombreLen + extraLen + comentarioLen;
+    if (nombre.endsWith('/')) continue;
+    if (flags & 1) throw new Error('El ZIP de ajustes está cifrado');
+    if (view.getUint32(local, true) !== 0x04034b50) throw new Error('No pude abrir un archivo de config');
+    const datos = local + 30 + view.getUint16(local + 26, true) + view.getUint16(local + 28, true);
+    const comprimidoBytes = bytes.subarray(datos, datos + comprimido);
+    let raw;
+    if (metodo === 0) raw = comprimidoBytes.slice();
+    else if (metodo === 8 && typeof DecompressionStream !== 'undefined') {
+      const stream = new Blob([comprimidoBytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+      raw = new Uint8Array(await new Response(stream).arrayBuffer());
+    } else throw new Error('Este navegador no puede incorporar los ajustes al ZIP completo');
+    if (raw.length !== size || crc32(raw) !== crc) throw new Error('Un archivo de config no pasó su comprobación');
+    out.push({name:nombre,size,crc,blob:new Blob([raw])});
+  }
+  return out;
 }
 
 async function armarPack(files, total, onProgress){
@@ -2134,15 +2179,22 @@ async function armarPack(files, total, onProgress){
   const hoy = new Date(), date = ((hoy.getFullYear() - 1980) << 9) | ((hoy.getMonth() + 1) << 5) | hoy.getDate();
   const leeme = enc.encode([
     'PACK WIP - Minecraft 1.20.1 con Forge 47.4.23', '',
-    'Copia las carpetas mods y resourcepacks de este zip dentro de .minecraft',
+    'Copia las carpetas mods, config y resourcepacks de este zip dentro de .minecraft',
     'de tu instancia de Prism (Editar instancia, Carpeta). SPBR queda disponible',
-    'en Opciones > Paquetes de recursos; actívalo dentro del juego si lo quieres.',
-    'Los ajustes van aparte: en la web, seccion Ajustes, "Bajar todos los ajustes".', '',
-    `Son ${modFiles.length} mods compartibles + SPBR 16.2. Faltan los privados (${PRIVADOS_TXT}):`,
+    'en Opciones > Paquetes de recursos; actívalo dentro del juego si lo quieres.', '',
+    `Son ${modCount} mods publicables + los ajustes + SPBR 16.2. Faltan los privados (${PRIVADOS_TXT}):`,
     'esos te los pasa Benjamin. Sin ellos no puedes entrar al servidor.', '',
+    'Jade por Snownee: CC BY-NC-SA 4.0. https://github.com/Snownee/Jade',
+    'Comforts por TheIllusiveC4: LGPL-3.0-or-later. https://modrinth.com/mod/comforts',
+    'SPBR conserva su licencia original dentro del ZIP del pack de texturas.', '',
     'Los mods son de sus autores; aqui solo se juntan para jugar en el servidor.', ''
   ].join('\r\n'));
-  const entries = files.map((f, i) => ({ name: f.p || 'mods/' + f.f, size: f.s, crc: f.c >>> 0, blob: blobs[i] }));
+  const entries = [];
+  for (let i = 0; i < files.length; i++) {
+    const f = files[i];
+    if (f.unzip) entries.push(...await extraerZip(blobs[i]));
+    else entries.push({ name: f.p || 'mods/' + f.f, size: f.s, crc: f.c >>> 0, blob: blobs[i] });
+  }
   entries.push({ name: 'LEEME.txt', size: leeme.length, crc: crc32(leeme), blob: new Blob([leeme]) });
   const out = [], central = []; let off = 0;
   for (const e of entries) {
@@ -2163,7 +2215,7 @@ async function armarPack(files, total, onProgress){
   setTimeout(() => URL.revokeObjectURL(url), 600000);
 }
 $('#todoslbl').textContent = `Bajar los ${DATA.todosCount} juntos`;
-$('#built').textContent = 'Datos sacados del pack el ' + DATA.built.split('-').reverse().join('/') + '.';
+$('#built').textContent = 'Lista base del pack: ' + DATA.built.split('-').reverse().join('/') + ' · Jade y Comforts agregados el 21/10/2026.';
 renderHechos('all'); renderCats(); renderMods(); renderKeys();
 </script>
 </body>

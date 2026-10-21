@@ -11,6 +11,7 @@ problemas que tengan no son culpa de los autores originales.
 Los mods cuya licencia no permite compartirlos aparecen en la página sin descarga.
 
 El botón del pack cliente arma un `.zip` con los mods publicables de la rama
-`mods` y `resourcepacks/SPBR-16_2.zip`. SPBR se obtiene desde su descarga oficial
-de Modrinth y conserva su archivo `LICENSE` dentro del ZIP original. La guía de la
-página explica cómo activarlo; los 6 mods privados se entregan por Discord.
+`mods`, Jade, Comforts, la carpeta `config/` y `resourcepacks/SPBR-16_2.zip`.
+Jade, Comforts y SPBR se obtienen de sus descargas oficiales; el ZIP de ajustes se
+descomprime y se integra en el paquete final. Los 6 mods privados se entregan por
+Discord. Los shaders y otros modpacks quedan como descargas aparte.
