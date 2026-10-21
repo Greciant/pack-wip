@@ -338,6 +338,14 @@ section.s{background-image:var(--noise);background-size:32px 32px;image-renderin
 .btn small{opacity:.75;font-weight:400}
 .packdl{display:grid;gap:8px;justify-items:start;max-width:340px;min-width:0}
 .packdl p{font-size:13.5px;margin:0}
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:12px}
+.resource-card{display:grid;align-content:start;gap:12px}
+.resource-card .kicker{font:600 12px "JetBrains Mono",monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--green-ink)}
+.resource-card h3{margin:0;font-size:20px}
+.resource-card p{margin:0;color:var(--muted);font-size:14.5px}
+.resource-card .state{padding:9px 11px;border:1px solid var(--line);background:var(--surface2);color:var(--fg);font-size:13.5px}
+.resource-card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.resource-card .actions .btn{flex:1 1 145px}
 .bar{width:100%;height:10px;border-radius:2px;background:var(--line);overflow:hidden;border:1px solid var(--line2)}
 .bar i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,var(--emerald) 0 8px,color-mix(in srgb,var(--emerald) 75%,#000) 8px 10px);transition:width .2s}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -599,6 +607,7 @@ footer p{max-width:80ch}
       <a href="#servidor">Conexión</a>
       <a href="#hechos">Mods propios</a>
       <a href="#mods">Mods</a>
+      <a href="#extras">Extras</a>
       <a href="#ajustes">Ajustes</a>
     </nav>
     <a class="btn dc" data-discord href="#" target="_blank" rel="noopener" title="Escríbele a Benjamin por Discord"><svg width="18" height="18" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 1h6v1H1zM0 2h8v4H0zM1 6h2v1H1zM5 6h2v1H5z"/><path fill="#5865f2" d="M2 3h1v2H2zM5 3h1v2H5z"/></svg><span>Discord</span></a>
@@ -663,7 +672,7 @@ footer p{max-width:80ch}
           <div class="preview-folder"><div class="preview-file mods"><i></i><span>mods/</span></div><div class="preview-file"><i></i><span>config/</span></div><div class="preview-memory"><span>Memoria asignada</span><b>8 GB</b></div></div>
           <span class="preview-caption">CARPETAS DE WIP</span>
         </div>
-        <h3>Instala el pack</h3><p>Descarga los mods y los ajustes, cópialos en la instancia y asígnale 8 GB de memoria.</p><a class="btn primary" href="#mods">Ver descargas</a>
+        <h3>Instala el pack</h3><p>Descarga los mods, SPBR y los ajustes; copia sus carpetas en la instancia y asígnale 8 GB de memoria.</p><a class="btn primary" href="#mods">Ver descargas</a>
       </article>
       <article class="st">
         <span class="num">3</span>
@@ -726,7 +735,7 @@ footer p{max-width:80ch}
           <summary>Ver la instalación completa del modpack</summary>
         <ol class="steps">
           <li><div><b>Instala Prism Launcher y Java 17.</b><p>Prism es gratis y deja tener varias instancias sin mezclar mods. Busca "Prism Launcher" en su web oficial.</p></div></li>
-          <li><div><b>Baja los mods y los ajustes.</b><p>En <a href="#mods">Mods</a>, "Bajar el pack completo" te da un zip con la carpeta <code>mods</code>; en <a href="#ajustes">Ajustes</a>, otro con la carpeta <code>config</code>. En Prism crea una instancia de Minecraft 1.20.1 con Forge, ábrele la carpeta (botón Carpeta) y copia las dos dentro de <code>.minecraft</code>. Los mods privados te los pasa Benjamin: <a data-discord href="#" target="_blank" rel="noopener">escríbele por Discord</a>.</p></div></li>
+          <li><div><b>Baja los mods, SPBR y los ajustes.</b><p>En <a href="#mods">Mods</a>, "Bajar el pack completo" crea un zip con <code>mods</code> y el pack de texturas SPBR en <code>resourcepacks</code>. En <a href="#ajustes">Ajustes</a>, baja también el zip de <code>config</code>. En Prism crea una instancia de Minecraft 1.20.1 con Forge, ábrele la carpeta (botón Carpeta) y copia <code>mods</code>, <code>resourcepacks</code> y <code>config</code> dentro de <code>.minecraft</code>. Los 6 mods privados se piden por Discord: <a data-discord href="#" target="_blank" rel="noopener">escríbele a Benjamin</a>.</p></div></li>
           <li><div><b>Comprueba la versión.</b><p>Editar instancia, Versión: Minecraft 1.20.1 y Forge 47.4.23. La primera vez Prism baja Forge solo, así que necesitas internet.</p></div></li>
           <li><div><b>Dale memoria.</b><p>Editar instancia, Ajustes, Java: mínimo 4096 MB y máximo 8192 MB. Con menos de 8 GB el pack va a tirones.</p>
             <div class="jvm"><pre id="jvm">-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=130 -XX:G1NewSizePercent=20 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=15 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:+UseStringDeduplication -XX:MetaspaceSize=512m -XX:+PerfDisableSharedMem</pre></div>
@@ -774,7 +783,7 @@ footer p{max-width:80ch}
     <div class="shead"><div>
       <div class="eyebrow">El pack</div>
       <h2>Todos los mods</h2>
-      <p class="lede">La lista completa del pack. Pasa el ratón por encima de uno para ver su archivo, o búscalo en Modrinth con un clic.</p>
+      <p class="lede">La lista completa tiene 303 mods. El ZIP reúne los 297 compartibles y SPBR; los 6 privados se piden por Discord. Pasa el ratón por un mod para ver su archivo o búscalo en Modrinth con un clic.</p>
     </div>
     <div class="packdl">
       <a class="btn primary" id="packbtn" href="https://greciant.github.io/pack-wip/#mods" target="_blank" rel="noopener"><span id="packlbl">Bajar el pack completo</span> <small id="packsize"></small></a>
@@ -802,6 +811,47 @@ footer p{max-width:80ch}
       </div>
     </div>
     <div class="mods" id="mlist"></div>
+  </div>
+</section>
+
+<section class="s" id="extras">
+  <div class="wrap">
+    <div class="shead"><div>
+      <div class="eyebrow">Vistos en los videos</div>
+      <h2>Texturas y mods recomendados</h2>
+      <p class="lede">Contrasté estos nombres con el inventario actual del pack. SPBR queda incluido en la descarga completa; los mods opcionales tienen su página oficial para que no se mezclen con el servidor sin probarlos.</p>
+    </div></div>
+    <div class="resources-grid">
+      <article class="panel resource-card">
+        <div class="kicker">Pack de texturas · cliente</div>
+        <h3>SPBR 16.2</h3>
+        <p>El video muestra “Wilderness Bound” (la imagen SPBR-22 de su galería). El archivo compatible con Minecraft 1.20.1 se llama <code>SPBR-16_2.zip</code>.</p>
+        <div class="state">Incluido en el ZIP del pack dentro de <code>resourcepacks/</code>. Actívalo en Opciones → Paquetes de recursos.</div>
+        <p>Las texturas funcionan sin shaders; para ver relieve y efectos PBR, usa un shader compatible con LabPBR y Parallax, como Complementary o BSL.</p>
+        <div class="actions"><a class="btn primary" href="https://cdn.modrinth.com/data/aNcOVoD7/versions/jtNbhldU/SPBR-16_2.zip">Descargar SPBR</a><a class="btn" href="https://modrinth.com/resourcepack/spbr" target="_blank" rel="noopener">Ficha y requisitos</a></div>
+      </article>
+      <article class="panel resource-card">
+        <div class="kicker">Mod de interfaz · Forge 1.20.1</div>
+        <h3>Controlling 12.0.2</h3>
+        <p>Añade búsqueda al menú de controles y ayuda a encontrar teclas en conflicto.</p>
+        <div class="state">Ya está activo en tu pack y forma parte de la descarga de mods.</div>
+        <div class="actions"><a class="btn" href="https://modrinth.com/mod/controlling/versions?l=forge&amp;g=1.20.1" target="_blank" rel="noopener">Descarga oficial</a></div>
+      </article>
+      <article class="panel resource-card">
+        <div class="kicker">Mod de interfaz · Forge 1.20.1</div>
+        <h3>Jade</h3>
+        <p>Muestra información del bloque o entidad que estás mirando.</p>
+        <div class="state">Encontré una copia en el pool, pero está desactivada (.disabled); no viene en el pack actual.</div>
+        <div class="actions"><a class="btn" href="https://modrinth.com/mod/jade/versions?l=forge&amp;g=1.20.1" target="_blank" rel="noopener">Descarga oficial</a></div>
+      </article>
+      <article class="panel resource-card">
+        <div class="kicker">Descanso · cliente y servidor</div>
+        <h3>Comforts</h3>
+        <p>Agrega sacos de dormir y hamacas para descansar durante las aventuras.</p>
+        <div class="state">No aparece en el inventario del pack. Para usarlo en este servidor habría que probarlo e instalarlo en ambos lados.</div>
+        <div class="actions"><a class="btn" href="https://modrinth.com/mod/comforts/versions?l=forge&amp;g=1.20.1" target="_blank" rel="noopener">Descarga oficial</a></div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -2002,7 +2052,7 @@ $('#kq').addEventListener('input', renderKeys); $('#kunset').addEventListener('c
 
 /* nav activa */
 const navObs = new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) $$('.nav a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + x.target.id)) }), { rootMargin:'-45% 0px -50% 0px' });
-['empezar','servidor','hechos','mods','ajustes'].forEach(id => navObs.observe(document.getElementById(id)));
+['empezar','servidor','hechos','mods','extras','ajustes'].forEach(id => navObs.observe(document.getElementById(id)));
 
 /* aparecer al bajar: solo si el navegador lo soporta y no se pidió menos movimiento */
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -2030,15 +2080,16 @@ $('#f-cfg').textContent = DATA.configsCount;
 $('#cfgsize').textContent = kb(DATA.configsZip);
 $('#todossize').textContent = kb(DATA.todosSize);
 
-/* pack completo: el zip se arma aquí mismo con cada .jar de la rama "mods" de GitHub */
+/* pack completo: mods compartibles de GitHub + SPBR oficial dentro de resourcepacks/ */
 const PRIVADOS_TXT = 'Archaion, Ancient Remnants, Roaring, Show My World, shineport y el parche de Beyond the Abyss para el cliente';
+const PACK_EXTRAS = [{f:'SPBR-16_2.zip',u:'https://cdn.modrinth.com/data/aNcOVoD7/versions/jtNbhldU/SPBR-16_2.zip',s:14702156,c:2702808429,p:'resourcepacks/SPBR-16_2.zip'}];
 (function(){
-  const files = DATA.pack || [], btn = $('#packbtn');
+  const modFiles = DATA.pack || [], files = [...modFiles, ...PACK_EXTRAS], btn = $('#packbtn');
   const total = files.reduce((a, f) => a + f.s, 0);
   const note = $('#packnote'), bar = $('#packbar');
   $('#packsize').textContent = kb(total);
-  $('#packlbl').textContent = `Bajar el pack completo (${files.length} mods)`;
-  const base = `Un .zip con la carpeta mods lista. No trae los privados (${PRIVADOS_TXT}): esos pídeselos a Benjamin.`;
+  $('#packlbl').textContent = `Bajar el pack completo (${modFiles.length} mods + SPBR)`;
+  const base = `ZIP con ${modFiles.length} mods compartibles y SPBR dentro de resourcepacks/. Faltan los 6 mods privados (${PRIVADOS_TXT}); pídeselos a Benjamin por Discord.`;
   note.textContent = inClaude ? 'Se baja desde la web del pack, que se abre en otra pestaña. ' + base : base;
   if (inClaude || !files.length) return;
   btn.removeAttribute('target'); btn.removeAttribute('href'); btn.setAttribute('role', 'button'); btn.tabIndex = 0;
@@ -2049,7 +2100,7 @@ const PRIVADOS_TXT = 'Archaion, Ancient Remnants, Roaring, Show My World, shinep
     try { await armarPack(files, total, (n, b) => {
       bar.firstElementChild.style.width = (b / total * 100).toFixed(1) + '%';
       note.textContent = `Bajando ${n} de ${files.length} · ${kb(b)} de ${kb(total)}. No cierres la página.`;
-    }); note.textContent = 'Listo. Si el navegador pregunta, guarda pack-wip-mods.zip. ' + base; }
+    }); note.textContent = 'Listo. Si el navegador pregunta, guarda pack-wip-cliente-1.20.1.zip. ' + base; }
     catch (err) { note.textContent = `Se cortó la descarga (${err.message}). Vuelve a probar.`; }
     finally { busy = false; btn.removeAttribute('aria-disabled'); bar.hidden = true; }
   });
@@ -2068,7 +2119,7 @@ async function armarPack(files, total, onProgress){
     for (let intento = 0; ; intento++) {
       let got = 0;
       try {
-        const r = await fetch(DATA.packRaw + encodeURIComponent(f.f));
+        const r = await fetch(f.u || DATA.packRaw + encodeURIComponent(f.f));
         if (!r.ok) throw new Error(f.f + ': ' + r.status);
         const reader = r.body.getReader(), chunks = [];
         for (;;) { const { done, value } = await reader.read(); if (done) break; chunks.push(value); got += value.length; bytes += value.length; onProgress(count, bytes); }
@@ -2083,14 +2134,15 @@ async function armarPack(files, total, onProgress){
   const hoy = new Date(), date = ((hoy.getFullYear() - 1980) << 9) | ((hoy.getMonth() + 1) << 5) | hoy.getDate();
   const leeme = enc.encode([
     'PACK WIP - Minecraft 1.20.1 con Forge 47.4.23', '',
-    'Copia la carpeta mods de este zip dentro de la carpeta .minecraft de tu',
-    'instancia de Prism (Editar instancia, Carpeta). Los ajustes van aparte:',
-    'en la web, seccion Ajustes, "Bajar todos los ajustes".', '',
-    `Son ${files.length} mods. Faltan los privados (${PRIVADOS_TXT}):`,
+    'Copia las carpetas mods y resourcepacks de este zip dentro de .minecraft',
+    'de tu instancia de Prism (Editar instancia, Carpeta). SPBR queda disponible',
+    'en Opciones > Paquetes de recursos; actívalo dentro del juego si lo quieres.',
+    'Los ajustes van aparte: en la web, seccion Ajustes, "Bajar todos los ajustes".', '',
+    `Son ${modFiles.length} mods compartibles + SPBR 16.2. Faltan los privados (${PRIVADOS_TXT}):`,
     'esos te los pasa Benjamin. Sin ellos no puedes entrar al servidor.', '',
     'Los mods son de sus autores; aqui solo se juntan para jugar en el servidor.', ''
   ].join('\r\n'));
-  const entries = files.map((f, i) => ({ name: 'mods/' + f.f, size: f.s, crc: f.c >>> 0, blob: blobs[i] }));
+  const entries = files.map((f, i) => ({ name: f.p || 'mods/' + f.f, size: f.s, crc: f.c >>> 0, blob: blobs[i] }));
   entries.push({ name: 'LEEME.txt', size: leeme.length, crc: crc32(leeme), blob: new Blob([leeme]) });
   const out = [], central = []; let off = 0;
   for (const e of entries) {
@@ -2106,7 +2158,7 @@ async function armarPack(files, total, onProgress){
   end.setUint32(0, 0x06054b50, true); end.setUint16(8, entries.length, true); end.setUint16(10, entries.length, true);
   end.setUint32(12, cdSize, true); end.setUint32(16, off, true);
   const url = URL.createObjectURL(new Blob([...out, ...central, end], { type: 'application/zip' }));
-  const a = document.createElement('a'); a.href = url; a.download = 'pack-wip-mods.zip';
+  const a = document.createElement('a'); a.href = url; a.download = 'pack-wip-cliente-1.20.1.zip';
   document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 600000);
 }
