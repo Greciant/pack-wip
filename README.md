@@ -14,4 +14,4 @@ El botón del pack cliente arma un `.zip` con los mods publicables de la rama
 `mods`, Jade, Comforts, la carpeta `config/` y `resourcepacks/SPBR-16_2.zip`.
 Jade, Comforts y SPBR se obtienen de sus descargas oficiales; el ZIP de ajustes se
 descomprime y se integra en el paquete final. Los 6 mods privados se entregan por
-Discord. Los shaders y otros modpacks quedan como descargas aparte.
+Discord; los shaders y otros modpacks quedan como descargas aparte.

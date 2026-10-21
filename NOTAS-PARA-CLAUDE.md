@@ -3,8 +3,8 @@
 ## Descarga completa
 
 - `index.html` ahora integra la descarga principal con los 299 mods publicables,
-  la carpeta `config/` y `resourcepacks/SPBR-16_2.zip`. Solo shaders y otros
-  modpacks quedan como descargas aparte.
+  la carpeta `config/` y `resourcepacks/SPBR-16_2.zip`. Los shaders y otros
+  modpacks quedan como descargas aparte; los 6 mods privados siguen por Discord.
 - Jade 11.13.3 Forge para Minecraft 1.20.1 y Comforts 6.4.0 para Minecraft 1.20.1
   se descargan de las CDN oficiales de Modrinth, con tamaño y CRC32 comprobados.
   El ZIP incluye atribución y licencias: Jade por Snownee (CC BY-NC-SA 4.0) y

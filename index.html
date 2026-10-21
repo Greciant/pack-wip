@@ -783,7 +783,7 @@ footer p{max-width:80ch}
     <div class="shead"><div>
       <div class="eyebrow">El pack</div>
       <h2>Todos los mods</h2>
-      <p class="lede">La lista completa tiene 305 mods. El ZIP reúne los 299 publicables, la carpeta de ajustes y SPBR; los 6 privados se piden por Discord. Solo los shaders y otros modpacks quedan aparte.</p>
+      <p class="lede">La lista completa tiene 305 mods. El ZIP reúne los 299 publicables, la carpeta de ajustes y SPBR. Los 6 mods privados se piden por Discord; los shaders y otros modpacks se descargan aparte.</p>
     </div>
     <div class="packdl">
       <a class="btn primary" id="packbtn" href="https://greciant.github.io/pack-wip/#mods" target="_blank" rel="noopener"><span id="packlbl">Bajar el pack completo</span> <small id="packsize"></small></a>
@@ -2100,7 +2100,7 @@ const PACK_RESOURCES = [
   const note = $('#packnote'), bar = $('#packbar');
   $('#packsize').textContent = kb(total);
   $('#packlbl').textContent = `Bajar el pack completo (${modCount} mods + ajustes + SPBR)`;
-  const base = `ZIP con ${modCount} mods, la carpeta config y SPBR dentro de resourcepacks/. Solo shaders y otros modpacks quedan aparte. Faltan los 6 mods privados (${PRIVADOS_TXT}); pídeselos a Benjamin por Discord.`;
+  const base = `ZIP con ${modCount} mods, la carpeta config y SPBR dentro de resourcepacks/. Los shaders y otros modpacks se descargan aparte. Faltan los 6 mods privados (${PRIVADOS_TXT}); pídeselos a Benjamin por Discord.`;
   note.textContent = inClaude ? 'Se baja desde la web del pack, que se abre en otra pestaña. ' + base : base;
   if (inClaude || !files.length) return;
   btn.removeAttribute('target'); btn.removeAttribute('href'); btn.setAttribute('role', 'button'); btn.tabIndex = 0;
