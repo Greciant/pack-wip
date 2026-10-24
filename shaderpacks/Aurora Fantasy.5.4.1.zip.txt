@@ -1,0 +1,40 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# AOSTEPS: 5.0 -> 4.0   1 escalon mas bajo (la opcion tiene 8 valores)
+#   legales: 2.0 3.0 4.0 5.0 6.0 7.0 8.0 10.0
+AOSTEPS=4.0
+# BLOOM_SAMPLES: 8.0 -> 6.0   2 escalones mas bajo (la opcion tiene 10 valores)
+#   legales: 2.0 3.0 4.0 5.0 6.0 7.0 8.0 10.0 12.0 16.0
+BLOOM_SAMPLES=6.0
+# CIRRUS_STEPS_AVG: 12 -> 8   2 escalones mas bajo (la opcion tiene 7 valores)
+#   legales: 3 4 5 6 8 10 12
+CIRRUS_STEPS_AVG=8
+# CLOUD_STEPS_AVG: 16 -> 8   3 escalones mas bajo (la opcion tiene 8 valores)
+#   legales: 3 4 5 6 8 10 12 16
+CLOUD_STEPS_AVG=8
+# COLORED_SHADOW: activado -> false   todo pixel opaco pasa por get_colored_shadow en vez de la version barata
+COLORED_SHADOW=false
+# FANTASY_FIREFLIES: 3 -> 2   con 3 son 10 pasos de bucle volumetrico a pantalla completa
+#   legales: 0 1 2 3 4
+FANTASY_FIREFLIES=2
+# PROFILE_QUALITY: 2 -> 1   1 escalon mas bajo (la opcion tiene 2 valores)
+#   legales: 1 2
+PROFILE_QUALITY=1
+# SHADOW_DISTANCE_SLIDER: 6 -> 4   simulado: 3072 res/192.0 bl -> 3072 res/128.0 bl
+#   legales: 1 2 3 4 5 6 7 8
+SHADOW_DISTANCE_SLIDER=4
+# SHADOW_ENTITIES: activado -> false   el lang del pack lo dice literal: 'Disabling improves FPS ~30%'
+SHADOW_ENTITIES=false
+# SHADOW_QTY_SLIDER: 5 -> 3   el propio perfil BALANCED del pack usa 3 (1536); 2 se queda por debajo
+#   legales: 1 2 3 4 5 6 7 8
+SHADOW_QTY_SLIDER=3
+# SHADOW_SAMPLES: 8 -> 4   1 escalon mas bajo (la opcion tiene 4 valores)
+#   legales: 4 8 12 16
+SHADOW_SAMPLES=4
+# V_CLOUDS: 2 -> 1   con 2 cada paso del raymarch de nubes hace una SEGUNDA lectura de gaux2
+#   legales: -1 0 1 2
+V_CLOUDS=1

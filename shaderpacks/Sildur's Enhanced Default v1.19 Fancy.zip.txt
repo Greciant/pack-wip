@@ -1,0 +1,16 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# Godrays: true -> false   composite.fsh:275, bucle de 20 iteraciones con lectura de shadowmap por pixel
+#   legales: true false
+Godrays=false
+# SSAO: true -> false   efecto caro, desactivado
+#   legales: true false
+SSAO=false
+# shadowDistance: 110.0 -> 90.0   shaders.settings:72
+shadowDistance=90.0
+# shadowMapResolution: 2048 -> 1024   shaders.settings:71, la palanca mas cara del pack
+shadowMapResolution=1024

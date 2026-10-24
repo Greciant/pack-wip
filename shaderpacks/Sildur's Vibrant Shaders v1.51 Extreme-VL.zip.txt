@@ -1,0 +1,26 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# Cloud_reflection: activado -> false   segunda pasada completa de nubes sobre cada pixel de agua
+#   legales: true false
+Cloud_reflection=false
+# ColoredShadows: activado -> false   duplica las lecturas de textura de sombra
+#   legales: true false
+ColoredShadows=false
+# SSDO: activado -> false   el comentario del propio autor dice 'High performance impact'
+SSDO=false
+# cloudsIT: 8 -> 6   pasos del raymarch de nubes volumetricas
+#   legales: 6 8 10 12 14 16 18 20 24 32 48
+cloudsIT=6
+# grass_shadows: activado -> false   el pase de sombra deja de rasterizar hierba y flores
+#   legales: true false
+grass_shadows=false
+# shadowDistance: 110.0 -> 80.0   tu maxShadowRenderDistance de 160 bloques no recortaba nada aqui
+shadowDistance=80.0
+# shadowMapResolution: 3072 -> 2048   el propio comentario del fichero etiqueta 3072 como 'extreme'
+shadowMapResolution=2048
+# shadow_samples: 15 -> 8   el bucle de filtrado de sombras, el coste por pixel mas alto del pack
+shadow_samples=8

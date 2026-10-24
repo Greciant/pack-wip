@@ -1,0 +1,37 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# GENERATED_NORMALS: activado -> false   es el interruptor real detras de NORMAL_RESOLUTION: 4 texture2D extra por pixel
+GENERATED_NORMALS=false
+# LPV_FOG: activado -> false   niebla iluminada enganchada al mismo raymarch volumetrico
+LPV_FOG=false
+# REFLECTION: 2 -> 1   SSR a plena calidad por pixel de agua
+#   legales: 0 1 2
+REFLECTION=1
+# SHADOW_COLOR: activado -> false   4 muestras de sombra por pixel se abaratan mucho al quitar la lectura de shadowcolor0
+#   legales: true false
+SHADOW_COLOR=false
+# SSAO: true -> false   efecto caro, desactivado
+#   legales: true false
+SSAO=false
+# VC_SHADOWS: activado -> false   sombras de nubes; ademas alargan el raymarch volumetrico
+#   legales: true false
+VC_SHADOWS=false
+# VL_SAMPLES: 8 -> 7   1 escalon mas bajo (la opcion tiene 12 valores)
+#   legales: 5 6 7 8 9 10 11 12 13 14 15 16
+VL_SAMPLES=7
+# VOLUMETRIC_CLOUDS: activado -> false   el efecto mas caro del pack, siempre activo: raymarch de hasta 24 muestras
+#   legales: true false
+VOLUMETRIC_CLOUDS=false
+# VOXEL_VOLUME_SIZE: 192 -> 128   el propio lang avisa: 'Higher values greatly decrease performance'
+#   legales: 128 192 256 384 512
+VOXEL_VOLUME_SIZE=128
+# shadowDistance: 192.0 -> 128.0   tope 128 bloques (tu render distance son 192)
+#   legales: 96.0 128.0 192.0 256.0 384.0 512.0 768.0 1024.0
+shadowDistance=128.0
+# shadowMapResolution: 2048 -> 1024   tope 1024 en una GPU de 4 GB
+#   legales: 1024 2048 3072 4096 8192
+shadowMapResolution=1024

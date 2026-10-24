@@ -1,0 +1,23 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# reflections: activado -> false   raymarch de 28 pasos para todos los pixeles sin early-out; el agua sigue reflejando cielo
+#   legales: true false
+reflections=false
+# shadowDistance: 120.0f -> 80.0f   el area del pase de sombra cae un ~55%
+#   legales: 60.0f 80.0f 120.0f 160.0f
+shadowDistance=80.0f
+# shadowMapResolution: 2048 -> 1024   tope 1024 en una GPU de 4 GB
+#   legales: 512 1024 2048 4096
+shadowMapResolution=1024
+# softShadows: activado -> false   de 8 lecturas shadow2D por pixel a una sola
+softShadows=false
+# vlQuality: 0.75 -> 0.3   lo mas caro del pack: el bucle corre para CADA pixel; de ~22 a ~9 iteraciones y el brillo se auto-normaliza
+#   legales: 0.3 0.5 0.75 1.0 1.5 2.0
+vlQuality=0.3
+# vlRenderDistance: 30.0 -> 20.0   acorta el rayo volumetrico; complementa vlQuality
+#   legales: 20.0 30.0 40.0 50.0 60.0
+vlRenderDistance=20.0

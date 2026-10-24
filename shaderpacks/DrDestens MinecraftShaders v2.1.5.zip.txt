@@ -1,0 +1,13 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# GODRAY_STEPS: 7 -> 4   GODRAYS activo de verdad en el overworld
+#   legales: 3 4 5 6 7 8 9 10 11 12 13 14 15
+GODRAY_STEPS=4
+# SCREEN_SPACE_AMBIENT_OCCLUSION: activado -> false   su propio lang la comenta como 'High performance impact'
+SCREEN_SPACE_AMBIENT_OCCLUSION=false
+# SSR_MODE: 3 -> 2   el modo 3 (Raytraced) hace raymarch completo; el 2 conserva reflejos mas baratos
+SSR_MODE=2

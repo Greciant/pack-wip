@@ -1,0 +1,27 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# BLOCK_REFLECT_QUALITY: 3 -> 1   1 escalon mas bajo (la opcion tiene 3 valores)
+#   legales: 0 1 3
+BLOCK_REFLECT_QUALITY=1
+# CLOUD_QUALITY: 2 -> 1   1 escalon mas bajo (la opcion tiene 4 valores)
+#   legales: 0 1 2 3
+CLOUD_QUALITY=1
+# ENTITY_SHADOW: 1 -> -1   el propio pack avisa en su lang: las sombras de entidades cuestan >50% de FPS en algunos casos
+#   legales: -1 1 2
+ENTITY_SHADOW=-1
+# LIGHTSHAFT_QUALI_DEFINE: 2 -> 1   1 escalon mas bajo (la opcion tiene 5 valores)
+#   legales: 0 1 2 3 4
+LIGHTSHAFT_QUALI_DEFINE=1
+# SHADOW_QUALITY: 2 -> 1   simulado: 2048 res/192.0 bl -> 1024 res/192.0 bl
+#   legales: -1 0 1 2 3 4 5
+SHADOW_QUALITY=1
+# WATER_REFLECT_QUALITY: 2 -> 1   1 escalon mas bajo (la opcion tiene 4 valores)
+#   legales: -1 0 1 2
+WATER_REFLECT_QUALITY=1
+# shadowDistance: 192.0 -> 128.0   tope 128 bloques (tu render distance son 192)
+#   legales: 64.0 80.0 96.0 112.0 128.0 160.0 192.0 224.0 256.0 320.0 384.0 512.0 768.0 1024.0
+shadowDistance=128.0

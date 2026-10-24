@@ -1,0 +1,15 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# SHADOW_RES: 5 -> 4   simulado: 1580 res/100.0 bl -> 840 res/100.0 bl
+#   legales: 0 1 2 3 4 5 6 7 8 9 10 11
+SHADOW_RES=4
+# VOL_LIGHT: 2 -> 0   config.glsl:90, muestreo de shadowmap por pixel
+#   legales: 0 1 2
+VOL_LIGHT=0
+# V_CLOUDS: 2 -> 1   nubes volumetricas raymarcheadas por pixel de cielo
+#   legales: 0 1 2
+V_CLOUDS=1

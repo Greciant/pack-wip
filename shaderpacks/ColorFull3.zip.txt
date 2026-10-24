@@ -1,0 +1,18 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# BLOCK_ENTITY_SHADOWS: 1 -> 0   su lang avisa: 'Can cause immense lag in large bases'
+#   legales: 0 1
+BLOCK_ENTITY_SHADOWS=0
+# BLOOM: activado -> false   su lang lo rotula 'Performance impact'; es el unico efecto caro de pantalla completa encendido
+#   legales: true false
+BLOOM=false
+# ENTITY_SHADOWS: 1 -> 0   su lang avisa: 'Can cause immense lag in large bases'
+#   legales: 0 1
+ENTITY_SHADOWS=0
+# shadowDistance: 96.0 -> 64.0   radio de geometria que se re-renderiza en el pase de sombra cada frame
+#   legales: 64.0 96.0 128.0 192.0 256.0
+shadowDistance=64.0

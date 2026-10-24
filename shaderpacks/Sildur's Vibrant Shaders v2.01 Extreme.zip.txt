@@ -1,0 +1,22 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# Cloud_reflection: true -> false   deferred.fsh:472, SEGUNDA pasada de nubes 3D sobre pixeles de agua
+#   legales: true false
+Cloud_reflection=false
+# PCSS: true -> false   anade lectura de profundidad de bloqueador y filtro de radio variable
+PCSS=false
+# SSDO: true -> false   el comentario del propio autor dice 'High performance impact': 16 muestras por pixel
+SSDO=false
+# cloudsIT: 8 -> 6   pasos del raymarch de nubes volumetricas
+#   legales: 6 8 10 12 14 16 18 20 24 32 48
+cloudsIT=6
+# shadowDistance: 110.0 -> 80.0   shaders.settings:37
+shadowDistance=80.0
+# shadowMapResolution: 3072 -> 2048   shaders.settings:38, la palanca mas grande del pack
+shadowMapResolution=2048
+# shadow_samples: 12 -> 8   deferred.fsh:565, 24 fetches de sombra por pixel con ColoredShadows
+shadow_samples=8

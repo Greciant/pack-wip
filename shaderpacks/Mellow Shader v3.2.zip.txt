@@ -1,0 +1,18 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# derivado de Mellow v3.3, que comparte su motor exacto y si esta auditado
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# BLOCK_ENTITY_SHADOWS: 1 -> 0   shaders.properties lo traduce a shadowBlockEntities=false
+#   legales: 0 1
+BLOCK_ENTITY_SHADOWS=0
+# BLOOM: activado -> false   habilita seis pasadas a pantalla completa
+#   legales: true false
+BLOOM=false
+# ENTITY_SHADOWS: 1 -> 0   shaders.properties lo traduce a shadowEntities=false
+#   legales: 0 1
+ENTITY_SHADOWS=0
+# shadowDistance: 96.0 -> 64.0   mismo motor que Mellow v3.3, auditado
+#   legales: 64.0 96.0 128.0 192.0 256.0
+shadowDistance=64.0

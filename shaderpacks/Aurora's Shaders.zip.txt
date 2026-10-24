@@ -1,0 +1,16 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# BLOOM: activado -> false   cuesta un programa entero (composite4) y apenas se ve
+BLOOM=false
+# SSAO_QUALI_DEFINE: 2 -> 0   encendida de fabrica y activa de verdad (SSAO_I=100)
+#   legales: 0 2 3
+SSAO_QUALI_DEFINE=0
+# WATER_REFLECT_QUALITY: 2 -> 1   1 escalon mas bajo (la opcion tiene 3 valores)
+#   legales: 0 1 2
+WATER_REFLECT_QUALITY=1
+# WORLD_OUTLINE: activado -> false   la unica que su propio lang marca como cara
+WORLD_OUTLINE=false

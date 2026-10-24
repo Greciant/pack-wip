@@ -1,0 +1,26 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# CLOUD_QUALITY: 1 -> 0   1 escalon mas bajo (la opcion tiene 4 valores)
+#   legales: 0 1 2 3
+CLOUD_QUALITY=0
+# CLOUD_SHADOWS: activado -> false   alternativa mejor que dejar el cielo vacio con CLOUD_QUALITY=0
+CLOUD_SHADOWS=false
+# LIGHTSHAFT_QUALI_DEFINE: 1 -> 0   encendida de fabrica, la mas cara que el perfil ignoraba
+#   legales: 0 1 2 3 4
+LIGHTSHAFT_QUALI_DEFINE=0
+# MOTION_BLUR_EFFECT: 1 -> -1   aqui el motion blur SI viene encendido, al contrario que en otros packs
+#   legales: -1 1
+MOTION_BLUR_EFFECT=-1
+# SHADOW_QUALITY: 1 -> 0   1 escalon mas bajo (la opcion tiene 7 valores)
+#   legales: -1 0 1 2 3 4 5
+SHADOW_QUALITY=0
+# WATER_REFLECT_QUALITY: 2 -> 1   1 escalon mas bajo (la opcion tiene 4 valores)
+#   legales: -1 0 1 2
+WATER_REFLECT_QUALITY=1
+# shadowDistance: 80.0 -> 64.0   el pase de sombra re-rasteriza el mundo y con 270 mods pesa
+#   legales: 64.0 80.0 96.0 112.0 128.0 160.0 192.0 224.0 256.0 320.0 384.0 512.0 768.0 1024.0
+shadowDistance=64.0

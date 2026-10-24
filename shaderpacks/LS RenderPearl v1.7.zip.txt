@@ -1,0 +1,20 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# COLORED_SHADOWS: true -> false   anade una lectura dependiente por cada muestra de sombra
+COLORED_SHADOWS=false
+# PCSS_SAMPLES: 3 -> 2   1 escalon mas bajo (la opcion tiene 5 valores)
+#   legales: 1 2 3 4 5
+PCSS_SAMPLES=2
+# TRANSLUCENT_SHADOWS: 10 -> 0   gbuffers_terrain.fsh:144, un SEGUNDO bucle 5x5 = 25 muestras
+#   legales: 0 1 2 3 4 5 6 7 8 9 10
+TRANSLUCENT_SHADOWS=0
+# VARIABLE_PENUMBRA_SHADOWS: 400 -> 0   el bucle mas caro del pack: blocker search PCSS, 49 taps por fragmento
+#   legales: 0 50 100 150 200 250 300 350 400 450 500 550 600 650 700 750 800 850 900 950 1000
+VARIABLE_PENUMBRA_SHADOWS=0
+# shadowDistance: 160 -> 128   tope 128 bloques (tu render distance son 192)
+#   legales: 96 112 128 144 160 176 192 208 224 240 256 272 288 304 320 336 352 368 384 400 416 432 448 464 480 496 512
+shadowDistance=128

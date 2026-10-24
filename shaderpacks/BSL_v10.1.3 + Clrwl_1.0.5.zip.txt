@@ -1,0 +1,27 @@
+# Perfil GTX 1650 SUPER 4 GB / Oculus 1.8.0 - 2026-09-05
+# AUDITADO a fondo leyendo el codigo del pack
+# Cada clave existe en este pack y cada valor esta en su lista legal.
+# Se retiraron las opciones de efectos APAGADOS de fabrica: no dan FPS.
+# Para volver a fabrica: borra este fichero.
+
+# AO_METHOD: 0 -> 1   la rama Modern anade 4 lecturas de depthtex y desproyecciones por muestra; Classic solo lee profundidad
+#   legales: 0 1
+AO_METHOD=1
+# CLOUDS: 2 -> 1   el modo Volumetric hace raymarch de hasta 32 muestras por pixel de cielo, y otra vez dentro del reflejo del agua
+#   legales: 0 1 2 3
+CLOUDS=1
+# REFLECTION: 2 -> 1   REFLECTION 2 activa el SSR con bucle fijo de 30 iteraciones por pixel de agua; con 1 quedan cielo y especular
+#   legales: 0 1 2
+REFLECTION=1
+# SHADOW_BLOCK_ENTITY: activado -> false   con 270 mods hay cientos de block entities por chunk y todos se redibujan en el pase de sombra
+SHADOW_BLOCK_ENTITY=false
+# SHADOW_COLOR: activado -> false   con SHADOW_FILTER activo pasa de 9 a 27 lecturas por pixel parcialmente sombreado, y ahorra el buffer shadowcolor0
+SHADOW_COLOR=false
+# SHADOW_ENTITY: activado -> false   Oculus deja de rasterizar TODAS las entidades en el pase de sombra; el lang avisa: 'Disable this when a huge amount of mobs are loaded'
+SHADOW_ENTITY=false
+# shadowDistance: 256.0 -> 128.0   tope 128 bloques (tu render distance son 192)
+#   legales: 128.0 192.0 256.0 384.0 512.0 768.0 1024.0
+shadowDistance=128.0
+# shadowMapResolution: 2048 -> 1024   tope 1024 en una GPU de 4 GB
+#   legales: 512 1024 1536 2048 3072 4096 8192
+shadowMapResolution=1024
