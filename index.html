@@ -783,10 +783,11 @@ footer p{max-width:80ch}
     <div class="shead"><div>
       <div class="eyebrow">El pack</div>
       <h2>Todos los mods</h2>
-      <p class="lede">La lista completa tiene 304 mods. El ZIP reúne los 298 publicables, la carpeta de ajustes y SPBR. Los 6 mods privados se piden por Discord; los shaders y otros modpacks se descargan aparte.</p>
+      <p class="lede">La lista completa tiene 304 mods. El ZIP reúne los 298 publicables, la carpeta de ajustes y SPBR, y también sale en versión para importar en CurseForge. Los 6 mods privados se piden por Discord; los shaders y otros modpacks se descargan aparte.</p>
     </div>
     <div class="packdl">
       <a class="btn primary" id="packbtn" href="https://greciant.github.io/pack-wip/#mods" target="_blank" rel="noopener"><span id="packlbl">Bajar el pack completo</span> <small id="packsize"></small></a>
+      <a class="btn" id="cfbtn" href="https://greciant.github.io/pack-wip/#mods" target="_blank" rel="noopener"><span>Pack para CurseForge</span> <small>importable</small></a>
       <p class="muted" id="packnote"></p>
       <div class="bar" id="packbar" hidden><i></i></div>
     </div></div>
@@ -2103,18 +2104,24 @@ const PACK_RESOURCES = [
   const base = `ZIP con ${modCount} mods, la carpeta config y SPBR dentro de resourcepacks/. Los shaders y otros modpacks se descargan aparte. Faltan los 6 mods privados (${PRIVADOS_TXT}); pídeselos a Benjamin por Discord.`;
   note.textContent = inClaude ? 'Se baja desde la web del pack, que se abre en otra pestaña. ' + base : base;
   if (inClaude || !files.length) return;
-  btn.removeAttribute('target'); btn.removeAttribute('href'); btn.setAttribute('role', 'button'); btn.tabIndex = 0;
   let busy = false;
-  btn.addEventListener('click', async e => {
+  const preparar = (b, cf) => {
+  b.removeAttribute('target'); b.removeAttribute('href'); b.setAttribute('role', 'button'); b.tabIndex = 0;
+  b.addEventListener('click', async e => {
     e.preventDefault(); if (busy) return; busy = true;
-    btn.setAttribute('aria-disabled', 'true'); bar.hidden = false;
-    try { await armarPack(files, total, (n, b) => {
-      bar.firstElementChild.style.width = (b / total * 100).toFixed(1) + '%';
-      note.textContent = `Bajando ${n} de ${files.length} · ${kb(b)} de ${kb(total)}. No cierres la página.`;
-      }); note.textContent = 'Listo. Si el navegador pregunta, guarda pack-wip-cliente-1.20.1.zip. ' + base; }
+    b.setAttribute('aria-disabled', 'true'); bar.hidden = false;
+    const nombre = cf ? 'pack-wip-curseforge-1.20.1.zip' : 'pack-wip-cliente-1.20.1.zip';
+    try { await armarPack(files, total, (n, by) => {
+      bar.firstElementChild.style.width = (by / total * 100).toFixed(1) + '%';
+      note.textContent = `Bajando ${n} de ${files.length} · ${kb(by)} de ${kb(total)}. No cierres la página.`;
+      }, cf); note.textContent = cf
+        ? `Listo. Guarda ${nombre}; en la app de CurseForge ve a Minecraft → Crear perfil personalizado → Importar y elige ese ZIP. ` + base
+        : `Listo. Si el navegador pregunta, guarda ${nombre}. ` + base; }
     catch (err) { note.textContent = `Se cortó la descarga (${err.message}). Vuelve a probar.`; }
-    finally { busy = false; btn.removeAttribute('aria-disabled'); bar.hidden = true; }
+    finally { busy = false; b.removeAttribute('aria-disabled'); bar.hidden = true; }
   });
+  };
+  preparar(btn, false); preparar($('#cfbtn'), true);
 })();
 
 function crc32(u8){
@@ -2157,7 +2164,7 @@ async function extraerZip(blob){
   return out;
 }
 
-async function armarPack(files, total, onProgress){
+async function armarPack(files, total, onProgress, cf){
   const enc = new TextEncoder(), blobs = new Array(files.length);
   let next = 0, count = 0, bytes = 0;
   async function bajar(f){
@@ -2196,6 +2203,12 @@ async function armarPack(files, total, onProgress){
     else entries.push({ name: f.p || 'mods/' + f.f, size: f.s, crc: f.c >>> 0, blob: blobs[i] });
   }
   entries.push({ name: 'LEEME.txt', size: leeme.length, crc: crc32(leeme), blob: new Blob([leeme]) });
+  if (cf) {
+    for (const e of entries) e.name = 'overrides/' + e.name;
+    const man = enc.encode(JSON.stringify({ minecraft: { version: '1.20.1', modLoaders: [{ id: 'forge-47.4.23', primary: true }] },
+      manifestType: 'minecraftModpack', manifestVersion: 1, name: 'Pack WIP', version: hoy.toISOString().slice(0, 10), author: 'Greciant', files: [], overrides: 'overrides' }, null, 2));
+    entries.push({ name: 'manifest.json', size: man.length, crc: crc32(man), blob: new Blob([man]) });
+  }
   const out = [], central = []; let off = 0;
   for (const e of entries) {
     const nm = enc.encode(e.name), h = new DataView(new ArrayBuffer(30)), c = new DataView(new ArrayBuffer(46));
@@ -2210,7 +2223,7 @@ async function armarPack(files, total, onProgress){
   end.setUint32(0, 0x06054b50, true); end.setUint16(8, entries.length, true); end.setUint16(10, entries.length, true);
   end.setUint32(12, cdSize, true); end.setUint32(16, off, true);
   const url = URL.createObjectURL(new Blob([...out, ...central, end], { type: 'application/zip' }));
-  const a = document.createElement('a'); a.href = url; a.download = 'pack-wip-cliente-1.20.1.zip';
+  const a = document.createElement('a'); a.href = url; a.download = cf ? 'pack-wip-curseforge-1.20.1.zip' : 'pack-wip-cliente-1.20.1.zip';
   document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 600000);
 }
