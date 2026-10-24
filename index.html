@@ -68,6 +68,14 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{background:var(--bg);color:var(--fg);font:16px/1.6 Rubik,"Segoe UI",system-ui,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+.st-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn.vid{font-size:14px}
+#vdlg{padding:0;border:2px solid var(--line2);background:var(--surface);color:var(--fg);width:min(980px,calc(100vw - 32px));max-width:none}
+#vdlg::backdrop{background:rgba(8,9,12,.78)}
+#vdlg .vh{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+#vdlg .vh b{flex:1;min-width:0;font:700 17px "Pixelify Sans",Rubik,sans-serif}
+#vdlg video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+#vdlg p{padding:10px 14px;font-size:13px;color:var(--muted);margin:0}
 a{color:var(--copper);text-underline-offset:3px}
 h1,h2,h3{font-family:"Pixelify Sans",Rubik,system-ui,sans-serif;font-weight:700;line-height:1.1;text-wrap:balance;margin:0}
 h2{font-size:clamp(28px,4.4vw,40px);letter-spacing:.01em}
@@ -663,7 +671,7 @@ footer p{max-width:80ch}
           </div>
           <span class="preview-caption">VISTA ILUSTRATIVA</span>
         </div>
-        <h3>Instala Prism</h3><p>Usa una instancia aparte para WIP. Necesitas Java 17 y Minecraft 1.20.1 con Forge.</p><a class="btn" href="https://prismlauncher.org/download/" target="_blank" rel="noopener">Descargar Prism</a>
+        <h3>Instala Prism</h3><p>Usa una instancia aparte para WIP. Necesitas Java 17 y Minecraft 1.20.1 con Forge.</p><div class="st-actions"><a class="btn" href="https://prismlauncher.org/download/" target="_blank" rel="noopener">Descargar Prism</a><button class="btn vid" type="button" data-vid="prism">▶ Ver video</button></div>
       </article>
       <article class="st">
         <span class="num">2</span>
@@ -672,7 +680,7 @@ footer p{max-width:80ch}
           <div class="preview-folder"><div class="preview-file mods"><i></i><span>mods/</span></div><div class="preview-file"><i></i><span>config/</span></div><div class="preview-memory"><span>Memoria asignada</span><b>8 GB</b></div></div>
           <span class="preview-caption">CARPETAS DE WIP</span>
         </div>
-        <h3>Instala el pack</h3><p>Descarga un solo ZIP con los mods, SPBR y los ajustes; copia sus carpetas en la instancia y asígnale 8 GB de memoria.</p><a class="btn primary" href="#mods">Ver descargas</a>
+        <h3>Instala el pack</h3><p>Descarga un solo ZIP con los mods, SPBR y los ajustes; copia sus carpetas en la instancia y asígnale 8 GB de memoria.</p><div class="st-actions"><a class="btn primary" href="#mods">Ver descargas</a><button class="btn vid" type="button" data-vid="pack">▶ Ver video</button></div>
       </article>
       <article class="st">
         <span class="num">3</span>
@@ -681,7 +689,7 @@ footer p{max-width:80ch}
           <div class="preview-network"><div class="preview-network-icon">✓</div><div class="preview-network-copy"><b>Conectado</b><span>Servidor WIP · red privada</span></div><div class="preview-nodes"><i></i><span>Invitación aceptada</span><span>·</span><span>Listo para jugar</span></div></div>
           <span class="preview-caption">RED PRIVADA</span>
         </div>
-        <h3>Conecta Tailscale</h3><p>Instálalo con tu cuenta personal y acepta la invitación privada que te enviaré. Después podrás entrar al servidor.</p><a class="btn" href="https://tailscale.com/download" target="_blank" rel="noopener">Descargar Tailscale</a>
+        <h3>Conecta Tailscale</h3><p>Instálalo con tu cuenta personal y acepta la invitación privada que te enviaré. Después podrás entrar al servidor.</p><div class="st-actions"><a class="btn" href="https://tailscale.com/download" target="_blank" rel="noopener">Descargar Tailscale</a><button class="btn vid" type="button" data-vid="tailscale">▶ Ver video</button></div>
       </article>
     </div>
   </div>
@@ -730,6 +738,7 @@ footer p{max-width:80ch}
           <li><div><b>Acepta la invitación privada.</b><p>Pídele a Benjamin que comparta el servidor contigo. Cuando aceptes, debería aparecer como dispositivo en Tailscale.</p></div></li>
           <li><div><b>Abre Minecraft y añade el servidor.</b><p>Con Tailscale conectado, ve a Multijugador → Añadir servidor y pega la dirección privada que recibiste, con el puerto <code>:25567</code>.</p></div></li>
         </ol>
+        <div class="st-actions" style="margin:4px 0 14px"><button class="btn vid" type="button" data-vid="tailscale">▶ Video: Tailscale</button><button class="btn vid" type="button" data-vid="servidor">▶ Video: entrar al servidor</button></div>
         <div class="note"><b>Chat de voz por proximidad.</b> Usa <kbd>F6</kbd> para abrir sus opciones y <kbd>N</kbd> para silenciar el micrófono. Requiere UDP <code>24454</code>.</div>
         <details class="pack-details">
           <summary>Ver la instalación completa del modpack</summary>
@@ -788,6 +797,7 @@ footer p{max-width:80ch}
     <div class="packdl">
       <a class="btn primary" id="packbtn" href="https://greciant.github.io/pack-wip/#mods" target="_blank" rel="noopener"><span id="packlbl">Bajar el pack completo</span> <small id="packsize"></small></a>
       <a class="btn" id="cfbtn" href="https://greciant.github.io/pack-wip/#mods" target="_blank" rel="noopener"><span>Pack para CurseForge</span> <small>importable</small></a>
+      <button class="btn vid" type="button" data-vid="curseforge">▶ Cómo importarlo en CurseForge</button>
       <p class="muted" id="packnote"></p>
       <div class="bar" id="packbar" hidden><i></i></div>
     </div></div>
@@ -924,6 +934,7 @@ footer p{max-width:80ch}
 </section>
 </main>
 
+<dialog id="vdlg" aria-labelledby="vtitle"><div class="vh"><b id="vtitle"></b><button class="btn" type="button" id="vclose" aria-label="Cerrar">✕</button></div><video id="vplayer" controls playsinline preload="none"></video><p>Animación ilustrativa: las ventanas reales pueden verse un poco distintas.</p></dialog>
 <footer>
   <div class="wrap">
     <span class="slot sm" aria-hidden="true"><svg viewBox="0 0 8 8" shape-rendering="crispEdges" id="logo2"></svg></span>
@@ -2227,6 +2238,17 @@ async function armarPack(files, total, onProgress, cf){
   document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 600000);
 }
+
+(function(){
+  const T={prism:'Instalar Prism y crear la instancia',pack:'Instalar el pack',curseforge:'Importar en CurseForge',tailscale:'Conectar Tailscale',servidor:'Entrar al servidor'};
+  const dlg=$('#vdlg'), v=$('#vplayer');
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-vid]');if(!b)return;const k=b.dataset.vid;
+    $('#vtitle').textContent=T[k];v.poster='videos/'+k+'.jpg';v.innerHTML=`<source src="videos/${k}.webm" type="video/webm"><source src="videos/${k}.mp4" type="video/mp4">`;v.load();dlg.showModal();v.play().catch(()=>{})});
+  const cerrar=()=>{v.pause();dlg.close()};
+  $('#vclose').addEventListener('click',cerrar);
+  dlg.addEventListener('click',e=>{if(e.target===dlg)cerrar()});
+  dlg.addEventListener('close',()=>{v.pause();v.innerHTML='';v.load()});
+})();
 $('#todoslbl').textContent = `Bajar los ${DATA.todosCount} juntos`;
 $('#built').textContent = 'Lista base del pack: ' + DATA.built.split('-').reverse().join('/') + ' · Jade y Comforts agregados el 21/10/2026.';
 renderHechos('all'); renderCats(); renderMods(); renderKeys();
